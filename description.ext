@@ -1,0 +1,420 @@
+//description.ext
+author = "Bacon Oreos"; // Author
+briefingName = "S.O.G. Zombies";
+onLoadName = "S.O.G. Zombies";
+onLoadMission = "The undead have risen, how long can you stay alive?"; // Description
+loadScreen = "images\loadScreen.jpg"; // Preview picture
+//overviewPicture = "images\loadScreen.paa";
+overviewText = "*zombie noises*";
+class Header
+{
+	gameType = Coop; // MP mission type
+};
+
+//allow debug console for Bacon Oreos (mission creator)
+enableDebugConsole[] = {"76561198992228600"};
+
+briefing = 0; // disables the briefing screen (map) on mission start
+
+/* respawnDialog = 0; // disables the respawn counter
+scoreTable = 0; // disables scoreboard
+respawn = 1;            // INSTANT respawn at death position
+respawnDelay = 30;       // no delay
+respawnOnStart = 0;     // don’t respawn at mission start */
+
+
+
+showHUD[] = {
+    true,   // Scripted HUD (keep enabled)
+    false,  // Weapon info (ammo, firemode)
+    false,   // Vehicle info
+    false,   // Command bar
+    false,   // Group bar
+    false,   // Radar
+    false,   // Compass
+    true,   // Watch
+    false,   // GPS
+    false    // Hint messages
+};
+
+/* class CfgFunctions {
+    class TAG {
+        class CATEGORY {
+            file = "path\to\functions";
+            class FUNCTIONNAME {}; 
+*/
+// Config include for discovered sounds
+//ALL THE PLAYER VARIABLES HERE
+class Params {
+
+    class VoicePack_P1 {
+        title = "Voice Pack - Player 1";
+        values[] = {0,1,2};
+        texts[] = {"Jim", "Bob", "Sam"};
+        default = 0;
+    };
+    class VoicePack_P2 {
+        title = "Voice Pack - Player 2";
+        values[] = {0,1,2};
+        texts[] = {"Jim", "Bob", "Sam"};
+        default = 0;
+    };
+    class VoicePack_P3 {
+        title = "Voice Pack - Player 3";
+        values[] = {0,1,2};
+        texts[] = {"Jim", "Bob", "Sam"};
+        default = 0;
+    };
+    class VoicePack_P4 {
+        title = "Voice Pack - Player 4";
+        values[] = {0,1,2};
+        texts[] = {"Jim", "Bob", "Sam"};
+        default = 0;
+    };
+    class VoicePack_P5 {
+        title = "Voice Pack - Player 5";
+        values[] = {0,1,2};
+        texts[] = {"Jim", "Bob", "Sam"};
+        default = 0;
+    };
+    class VoicePack_P6 {
+        title = "Voice Pack - Player 6";
+        values[] = {0,1,2};
+        texts[] = {"Jim", "Bob", "Sam"};
+        default = 0;
+    };
+    class VoicePack_P7 {
+        title = "Voice Pack - Player 7";
+        values[] = {0,1,2};
+        texts[] = {"Jim", "Bob", "Sam"};
+        default = 0;
+    };
+    class VoicePack_P8 {
+        title = "Voice Pack - Player 8";
+        values[] = {0,1,2};
+        texts[] = {"Jim", "Bob", "Sam"};
+        default = 0;
+    };
+    class VoicePack_P9 {
+        title = "Voice Pack - Player 9";
+        values[] = {0,1,2};
+        texts[] = {"Jim", "Bob", "Sam"};
+        default = 0;
+    };
+    class VoicePack_P10 {
+        title = "Voice Pack - Player 10";
+        values[] = {0,1,2};
+        texts[] = {"Jim", "Bob", "Sam"};
+        default = 0;
+    };
+    class VoicePack_P11 {
+        title = "Voice Pack - Player 11";
+        values[] = {0,1,2};
+        texts[] = {"Jim", "Bob", "Sam"};
+        default = 0;
+    };
+    class VoicePack_P12 {
+        title = "Voice Pack - Player 12";
+        values[] = {0,1,2};
+        texts[] = {"Jim", "Bob", "Sam"};
+        default = 0;
+    };
+    class VoicePack_P13 {
+        title = "Voice Pack - Player 13";
+        values[] = {0,1,2};
+        texts[] = {"Jim", "Bob", "Sam"};
+        default = 0;
+    };
+    class VoicePack_P14 {
+        title = "Voice Pack - Player 14";
+        values[] = {0,1,2};
+        texts[] = {"Jim", "Bob", "Sam"};
+        default = 0;
+    };
+    class VoicePack_P15 {
+        title = "Voice Pack - Player 15";
+        values[] = {0,1,2};
+        texts[] = {"Jim", "Bob", "Sam"};
+        default = 0;
+    };
+
+};
+
+
+class CfgFunctions {
+    class BAC {
+        class HUD {
+            file = "functions";
+            class updateRoundHUD {};
+            class updateScoreHUD {};
+            class updateAmmoHUD {};
+            class updateGrenadeHUD {};
+            class updateFiremodeHUD {};
+            class updateMineHUD {};
+            class showMessage {};
+            class showMessageGeneric {};
+            class startPromptWatcher {};
+            class updateBloodHUD {};    
+            class updateGlareHUD {};
+        };
+        class Economy {
+            file = "functions";
+            class scoreBuy {};
+            class handleBuy {};
+            class interactPrompt {};
+        };
+        class Economy2 {
+            file = "functions\buystations";
+            class fullAmmo {};
+        };
+        class Functions {
+            file = "functions";
+			class gameOverSequence {};
+            class checkPlayersAlive {};
+			class roundEndSting {};
+			class blockerClear {};
+            class clearMessage {};
+            class initVoicePacks {};
+            class playVoiceLine {};
+            class playAnnouncer {};
+            class playVoice3D {};
+            class handleZombieSectorSpawns {};
+            class ZombieSectorSpawnsIndex {};
+            class ZombieSectorUnlock {};
+            class add3DDisplay {};
+            class keepOnlyCompatibleMags {};
+            class fireSupport {};
+            class proximityTrigger {};
+            class cleanupDroppedItems {};
+            class movePlayerToGunship {};
+            class requestAircraftSupport {};
+        };
+
+        class Revive {
+            file = "functions";
+            class gameOverClient {};
+            class setDowned {};
+            class revivePlayer {};
+            class reviveAll {};
+        };
+        class StockMarket {
+            file = "functions"
+            class updateStockDisplay {};
+            class stockInteract {};
+            class moneyPopup {};
+        }
+    };
+};
+
+
+class CfgRemoteExec {
+    class Functions {
+        mode = 2; // 0 = block all, 1 = only whitelisted allowed, 2 = all allowed
+        jip = 1;  // allow functions to be sent to players joining in progress
+
+        class BAC_fnc_roundEndSting {}; // ✅ allowed
+        class BAC_fnc_showMessage {};   // ✅ allowed
+        class BAC_fnc_startPromptWatcher {};
+    };
+};
+
+
+
+class RscPicture
+{
+    access = 0;
+    idc = -1;
+    type = 0;
+    style = 48; // ST_PICTURE
+    colorBackground[] = {0,0,0,0};
+    colorText[] = {1,1,1,1};
+    font = "TahomaB";
+    sizeEx = 0;
+    lineSpacing = 0;
+    text = "";
+    fixedWidth = 0;
+    shadow = 0;
+};
+
+
+class RscTitles {
+
+    class Hitmarker {
+        idd = -1; // No dialog ID
+        duration = 0.2;  // Keep it displayed for a long time
+        fadein = 0; // No fade-in
+        fadeout = 0.7; // fade-out
+        movingEnable = 0;
+        enableSimulation = 1;
+        controlsBackground[] = {"CtrlKillmarker"};
+        class CtrlKillmarker {
+            idc = -1; // No specific ID
+            type = 0; // Type 0 for static image
+            style = 2096; // Centering
+            x = "safeZoneX + safeZoneW / 2 - 0.025"; // Center horizontally
+            y = "safeZoneY + safeZoneH / 2 - 0.03"; // Center vertically
+            h = 0.05; // Width of the crosshair
+            w = 0.05; // Height of the crosshair
+            font = "RobotoCondensed"; // Font type
+            sizeEx = 0; // Size of the text (not used here, but required)
+            colorBackground[] = {0,0,0,0}; // Transparent background
+            colorText[] = {1, 1, 1, 1}; // red 1,0,0,1
+            text = "images\hitmarker.paa"; // Path to your crosshair image
+        };
+    };
+
+	class Hitmarker_Kill {
+        idd = -1; // No dialog ID
+        duration = 0.2;  // Keep it displayed for a long time
+        fadein = 0; // No fade-in
+        fadeout = 0.7; // fade-out
+        movingEnable = 0;
+        enableSimulation = 1;
+        controlsBackground[] = {"CtrlKillmarker"};
+        class CtrlKillmarker {
+            idc = -1; // No specific ID
+            type = 0; // Type 0 for static image
+            style = 2096; // Centering
+            x = "safeZoneX + safeZoneW / 2 - 0.035"; // Center horizontally
+            y = "safeZoneY + safeZoneH / 2 - 0.038"; // Center vertically
+            h = 0.07; // Width of the crosshair
+            w = 0.07; // Height of the crosshair
+            font = "RobotoCondensed"; // Font type
+            sizeEx = 0; // Size of the text (not used here, but required)
+            colorBackground[] = {0,0,0,0}; // Transparent background
+            colorText[] = {1, 1, 1, 1}; // red 1,0,0,1
+            text = "images\hitmarker_kill.paa"; // Path to your crosshair image
+        };
+    };
+};
+
+#include "voicepacks.hpp"
+
+//mission end types
+class CfgDebriefing
+{
+	class End1
+	{
+		title = "Your team has gone M.I.A.";
+		subtitle = "";
+		description = "";
+		pictureBackground = "images\endScreen.jpg";
+		picture = "";
+		pictureColor[] = { 0.0, 0.3, 0.6, 1 };
+	};
+
+	class End2
+	{
+		title = "Your team has gone M.I.A.";
+		subtitle = "";
+		description = "";
+		pictureBackground = "";
+		picture = "KIA";
+		pictureColor[] = { 0.6, 0.1, 0.2, 1 };
+	};
+};
+
+
+
+
+
+
+
+
+
+
+/*
+class BloodOverlay
+    {
+        idd = -1;
+        duration = 10e10;
+        fadein = 1;
+        fadeout = 3;
+        movingEnable = 0;
+        onLoad = "uiNamespace setVariable ['BloodOverlay', _this select 0]";
+        class controls
+        {
+            class OverlayImage: RscPicture
+            {
+                idc = 1001;
+                text = "";
+                
+                //safezones
+                x = safeZoneX;   // left edge of the "safe zone" (not necessarily the real screen edge)
+                y = safeZoneY;   // top edge of the safe zone (not necessarily the real screen top)
+                w = safeZoneW;   // width of the safe zone (can be narrower than screen width on ultrawide)
+                h = safeZoneH;   // height of the safe zone (can be shorter than screen height)
+
+                /* //absolutes
+                x = safeZoneXAbs;   // actual left edge of the monitor
+                y = safeZoneYAbs;   // actual top edge of the monitor
+                w = safeZoneWAbs;   // full physical width of the monitor
+                h = safeZoneHAbs;   // full physical height of the monitor
+
+                /* //manual coverage
+                x = -0.5;   // start half a screen width to the left
+                y = -0.5;   // start half a screen height above the top
+                w = 2;      // double the screen width
+                h = 2;      // double the screen height
+
+                colorText[] = {1,1,1,0}; // invisible at start
+            };
+        };
+    };
+
+    class GlareOverlay
+    {
+        idd = -1;
+        duration = 10e10; // stays forever
+        fadein = 2;
+        fadeout = 2;
+        movingEnable = 0;
+        onLoad = "uiNamespace setVariable ['GlareOverlay', _this select 0]";
+
+        class controls
+        {
+            class GlareImage
+            {
+                idc = 3001;
+                type = 0; 
+                style = 48; // ST_PICTURE
+
+                text = "images\glare.paa"; // your glare texture
+
+                // safeZones (per your request)
+                x = safeZoneX;   // left edge of safe zone
+                y = safeZoneY;   // top edge of safe zone
+                w = safeZoneW;   // safe zone width
+                h = safeZoneH;   // safe zone height
+
+                // required properties
+                font = "TahomaB";
+                sizeEx = 0;
+                shadow = 0;
+                fixedWidth = 0;
+                lineSpacing = 0;
+
+                // colors
+                colorBackground[] = {0,0,0,0};
+                colorText[] = {1,1,1,0}; // start invisible
+            };
+        };
+    
+    }; */
+
+
+//// filename, volume, pitch, distance (optional)
+//playSound "siren";
+
+/* class CfgSounds {
+
+Sounds[]={};
+	class siren
+	{
+		name = "siren";
+		sound[] = {"sounds\air_raid_siren1.ogg", db+1, 1};
+		titles[] = {};
+	};
+	
+}; */
+

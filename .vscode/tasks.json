@@ -1,0 +1,11 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Fix old BAC function names",
+            "type": "shell",
+            "command": "Get-ChildItem -Recurse -Filter *.sqf | ForEach-Object { (Get-Content $_.FullName) -replace 'BAC_roundcounterUI_fnc_updateRoundHUD','BAC_fnc_updateRoundHUD' -replace 'BAC_scoreUI_fnc_updateHUD','BAC_fnc_updateScoreHUD' | Set-Content -Path $_.FullName }",
+            "problemMatcher": []
+        }
+    ]
+}
