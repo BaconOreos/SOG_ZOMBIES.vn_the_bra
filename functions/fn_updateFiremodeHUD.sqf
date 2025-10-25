@@ -32,7 +32,7 @@ switch (true) do {
     case (_mode isEqualTo "Burst"):           { _icon = "images\burst.paa"; };
     case (_mode isEqualTo "FullAuto"):        { _icon = "images\fullauto.paa"; };
     case (_mode isEqualTo "FullAutoFast"):    { _icon = "images\fullautofast.paa"; };
-    case (_mode find "melee" > -1):           { _text = "<t size='1.8' color='#b6098bff'></t>"; };
+    case (_mode find "melee" > -1):           { _text = "<t size='1.2' font='tt2020base_vn' color='#cccccc'>safe</t>"; };
     default { _text = format ["<t size='1.2' font='tt2020base_vn' color='#cccccc'>%1</t>", _mode]; };
 };
 

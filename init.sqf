@@ -18,6 +18,8 @@ resistance setFriend [east, 1];
 	diag_log "init.sqf is starting fn_initVoicePacks.sqf";
 	[] execVM "functions\fn_initVoicePacks.sqf";
 	[] execVM "scripts\fireSupportSystem.sqf";
+	//[] execVM "scripts\showOpforUnits.sqf";
+
 	//diag_log "init.sqf is starting InitDownedSystem.sqf";
 	//[] execVM "scripts\initDownedSystem.sqf";
 };
